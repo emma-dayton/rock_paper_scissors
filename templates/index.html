@@ -3,23 +3,27 @@
 	<head>
 		<title></title>
 		<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="static/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
   </head>
   <body>
     <div id="wrapper">
       <div class="imagebar">
         <img src="/static/images/rock.png" alt="image of a rock" style="width: 200px; height:200px;">
-        <img src="/static/images/paper.jpg" alt="image of a paper" style="width: 200px; height:200px;">
+        <img src="/static/images/paper.png" alt="image of a paper" style="width: 200px; height:200px;">
         <img src="/static/images/scissors.png" alt="image of a pair of scissors" style="width: 200px; height:200px;">
       </div>
-      <form action="/result" method="POST">
-        <select name="my_options">
-          <option value="select" selected>select</option>
-          <option value="rock">Rock</option>
-          <option value="paper">Paper</option>
-          <option value="scissors">Scissors</option>
-        </select>
-        <input type="submit">
-      </form>
+      <div class="form-row align-items-center">
+        <form action={{ url_for("play") }} method="POST">
+          <select class="form-control" name="my_options">
+            <option value="select" selected>select</option>
+            <option value="rock">Rock</option>
+            <option value="paper">Paper</option>
+            <option value="scissors">Scissors</option>
+          </select>
+          <input type="submit">
+        </form>
+      </div>
       <p>{{comp_str}}</p>
       <p>{{play_str}}</p>
       <p>{{resolution}}</p>

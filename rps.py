@@ -19,7 +19,7 @@ def home():
 
 
 @app.route('/result', methods=['POST', 'GET'])
-def start():
+def play():
     winner = ''
     player = ''
     comp = choice(computer)
